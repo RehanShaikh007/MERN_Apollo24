@@ -11,7 +11,7 @@ const Messages = () => {
         const fetchMessages = async() => {
             try {
                 const {data} = await axios.get(
-                    "http://localhost:4000/api/v1/message/getall", {withCredentials: true});
+                    "https://mern-apollo24-backend.onrender.com/api/v1/message/getall", {withCredentials: true});
                     setMessages(data.messages);
             } catch (error) {
                 console.log("ERROR OCCURED WILE FETCHING MESSAGES:", error);

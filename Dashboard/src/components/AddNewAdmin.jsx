@@ -24,7 +24,7 @@ const AddNewAdmin = () => {
     try {
      const response =  await axios
         .post(
-          "http://localhost:4000/api/v1/user/admin/addnew",
+          "https://mern-apollo24-backend.onrender.com/api/v1/user/admin/addnew",
           { firstName, lastName, email, phone, aadhar, dob, gender, password, },
           {
             withCredentials: true,

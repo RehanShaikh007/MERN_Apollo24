@@ -61,7 +61,7 @@ const AddNewDoctor = () => {
         formData.append("dob", dob);
      const response =  await axios
         .post(
-          "http://localhost:4000/api/v1/user/doctor/addnew",
+          "https://mern-apollo24-backend.onrender.com/api/v1/user/doctor/addnew",
           formData,
           {
             withCredentials: true,

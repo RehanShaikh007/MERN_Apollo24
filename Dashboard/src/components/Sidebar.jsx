@@ -42,7 +42,7 @@ const gotoAddNewAdmin = () => {
 
 const handleLogout = async()=>{
       
-    await axios.get("http://localhost:4000/api/v1/user/admin/logout", {withCredentials: true}).then(res => {
+    await axios.get("https://mern-apollo24-backend.onrender.com/api/v1/user/admin/logout", {withCredentials: true}).then(res => {
         toast.success(res.data.message);
         setIsAuthenticated(false);
     }).catch(err => {
