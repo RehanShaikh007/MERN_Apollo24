@@ -33,6 +33,8 @@ const Login = () => {
           setPassword("");
           setConfirmPassword("");
         });
+    
+
     } catch (error) {
       toast.error(error.response.data.message);
     }
