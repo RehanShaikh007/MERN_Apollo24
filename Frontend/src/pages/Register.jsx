@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response= await axios.post(
-          "http://localhost:4000/api/v1/user/patient/register",
+          "https://mern-apollo24-api.vercel.app/api/v1/user/patient/register",
           { firstName, lastName, email, phone, aadhar, dob, gender, password, role: "Patient", },
           {
             withCredentials: true,
@@ -123,7 +123,7 @@ const Register = () => {
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Register</button>
+            <button style={{cursor: "pointer"}} type="submit">Register</button>
           </div>
         </form>
       </div>
