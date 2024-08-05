@@ -8,5 +8,15 @@
             "src" : "/(.*)",
             "dest": "/"
         }
-    ]
+    ],
+    "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://mern-apollo24-frontend.vercel.app" },
+        { "key": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" }
+      ]
+    }
+  ]
 }
