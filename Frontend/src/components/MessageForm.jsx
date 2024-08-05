@@ -12,7 +12,7 @@ const MessageForm = () => {
         e.preventDefault();
         try{
            await axios.post(
-            "https://mern-apollo24-backend.onrender.com/api/v1/message/send",
+            "http://localhost:4000/api/v1/message/send",
              {firstName, lastName, email, phone, message},
               {
                 withCredentials: true,
@@ -34,7 +34,7 @@ const MessageForm = () => {
     };
   return (
     <div className='container form-component message-form'>
-      <h2>Send Us A Message</h2>
+      <h2 style={{color: "#FF9700"}}>Send Us A Message</h2>
       <form onSubmit={handleMessage}>
         <div>
             <input type="text"  placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
@@ -52,7 +52,7 @@ const MessageForm = () => {
 
 
         <div style={{justifyContent: "center", alignItems: "center"}}>
-          <button type='submit'>Send</button>
+          <button style={{cursor: "pointer"}} type='submit'>Send</button>
         </div>
 
       </form>

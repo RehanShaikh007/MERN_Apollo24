@@ -13,7 +13,7 @@ const Navbar = () => {
    
     const handleLogout = async()=>{
       
-        await axios.get("https://mern-apollo24-backend.onrender.com/api/v1/user/patient/logout", {withCredentials: true}).then(res => {
+        await axios.get("http://localhost:4000/api/v1/user/patient/logout", {withCredentials: true}).then(res => {
             toast.success(res.data.message);
             setIsAuthenticated(false);
         }).catch(err => {
@@ -25,9 +25,13 @@ const Navbar = () => {
       navigateTo("/login");  
     };
 
+    const logoClick =() =>{
+      navigateTo("/");
+    }
+
   return (
     <nav className='container'>
-      <div className="logo"><img src="/logo.png" alt="logo" className="logo-img"/></div>
+      <div className="logo" onClick={logoClick}><img src="/logo.png" alt="logo" className="logo-img"/></div>
       <div className={show ? "navLinks showmenu": "navLinks"}>
         <div className="links">
             <Link to={"/"}>HOME</Link>

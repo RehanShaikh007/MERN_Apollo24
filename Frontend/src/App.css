@@ -9,6 +9,12 @@
 body {
   background: #e5e5e5;
 }
+
+.logo-img{
+  cursor: pointer;
+}
+
+
 .btn {
   padding: 7px 20px;
   border-radius: 12px;
@@ -75,8 +81,8 @@ h6 {
 .hero {
   display: flex;
   gap: 50px;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 200px;
+  padding-bottom: 90px;
   position: relative;
 }
 .hero .banner {
@@ -195,7 +201,7 @@ h6 {
   border-radius: 8px;
   font-size: 24px;
   margin-bottom: 30px;
-  background: linear-gradient(140deg, #9083d5, #271776ca);
+  background: linear-gradient(140deg, #83a5d5, #0E606E);
 }
 .form-component .wrapper {
   display: flex;
@@ -334,6 +340,7 @@ footer .content div:nth-child(3) {
 footer .content div h4 {
   font-weight: 700;
   margin-bottom: 20px;
+  color: #0E606E;
 }
 footer .content div ul {
   display: flex;
@@ -341,7 +348,7 @@ footer .content div ul {
   gap: 10px;
 }
 footer .content div ul a {
-  color: gray;
+  color: black;
   text-decoration: none;
 }
 footer .content div ul a:hover {
@@ -349,7 +356,7 @@ footer .content div ul a:hover {
   transition: 0.3s;
 }
 footer .content div ul li span {
-  color: gray;
+  color: black;
 }
 footer .content div ul li span:first-child {
   width: 150px;
@@ -496,6 +503,7 @@ nav .btn {
 }
 nav .logoutBtn {
   background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  cursor: pointer;
 }
 nav .loginBtn {
   background: linear-gradient(135deg, black, rgb(49, 49, 49));
