@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "https://mern-apollo24-api.vercel.app/api/v1/user/login",
           { email, password, confirmPassword, role: "Patient" },
           {
             withCredentials: true,
@@ -88,7 +88,7 @@ const Login = () => {
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Login</button>
+            <button style={{cursor: "pointer"}} type="submit">Login</button>
           </div>
         </form>
       </div>
