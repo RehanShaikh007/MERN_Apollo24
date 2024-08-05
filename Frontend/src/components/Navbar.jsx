@@ -13,7 +13,7 @@ const Navbar = () => {
    
     const handleLogout = async()=>{
       
-        await axios.get("http://localhost:4000/api/v1/user/patient/logout", {withCredentials: true}).then(res => {
+        await axios.get("https://mern-apollo24-api.vercel.app/api/v1/user/patient/logout", {withCredentials: true}).then(res => {
             toast.success(res.data.message);
             setIsAuthenticated(false);
         }).catch(err => {
