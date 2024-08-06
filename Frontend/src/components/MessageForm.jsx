@@ -12,7 +12,7 @@ const MessageForm = () => {
         e.preventDefault();
         try{
            await axios.post(
-            "http://localhost:5173/api/v1/message/send",
+            "http://localhost:4000/api/v1/message/send",
              {firstName, lastName, email, phone, message},
               {
                 withCredentials: true,
