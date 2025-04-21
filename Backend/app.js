@@ -1,6 +1,7 @@
 import express from "express";
 
-import {config} from "dotenv"  
+import dotenv from "dotenv" 
+import path from "path" 
 
 import cors from "cors"
 import cookieParser from "cookie-parser";
@@ -14,12 +15,12 @@ import appointmentRouter from "./router/appointmentRouter.js";
 
 const app = express();
 
-config({path: "./config/config.env"})
+// config({path: "/.env"})
+dotenv.config();
 
 app.use(
     cors({
-    origin: [process.env.FRONTEND_URL, process.env.
-        DASHBOARD_URL],
+    origin: [process.env.FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
@@ -32,6 +33,12 @@ app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/",
 }));
+
+app.use(express.static(path.join(__dirname, '/Frontend/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Frontend', 'dist', 'index.html'));
+})
 
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
