@@ -146,7 +146,7 @@ const AppointmentForm = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/appointment/post",
+        "https://mern-apollo24-1.onrender.com/api/v1/appointment/post",
         appointmentData,
         {
           withCredentials: true,
