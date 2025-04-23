@@ -12,7 +12,7 @@ const UserAppointments = () => {
         const fetchAppointments = async () => {
             try {
                 const { data } = await axios.get(
-                    "http://localhost:4000/api/v1/user/patient/appointments",
+                    "https://mern-apollo24-1.onrender.com/api/v1/user/patient/appointments",
                     { withCredentials: true }
                 );
                 setAppointments(data.appointments);
