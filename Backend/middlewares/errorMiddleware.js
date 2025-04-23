@@ -26,11 +26,10 @@ export const errorMiddleware = (err, req, res, next) => {
         err = new Errorhandler (message, 400);
     }
 
-    if(err.name === "CastError"){
-        const message = `Invalid ${err.path}`;
-        err = new Errorhandler (message, 400);
-
-    }
+    if (err.name === "CastError") {
+        const message = `Resource not found. Invalid: ${err.path || 'unknown path'}`;
+        err = new Errorhandler(message, 400);
+      }
 
     const errorMessage = err.errors ? Object.values(err.errors)
     .map((error) => error.message)

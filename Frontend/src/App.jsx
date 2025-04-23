@@ -20,10 +20,17 @@ function App() {
  useEffect(() => {
   const fetchUser = async() => {
     try {
-      const response = await axios.get("https://mern-apollo24-1.onrender.com/api/v1/user/patient/me", {withCredentials: true});
+      const response = await axios.get("/api/v1/user/patient/me", {withCredentials: true, headers: {
+        'Accept': 'application/json'
+      }});
       setIsAuthenticated(true);
       setUser(response.data.user);
     } catch (error) {
+      console.error('Error details:', {
+        status: error.response?.status,
+        data: error.response?.data,
+        config: error.config
+      });
      setIsAuthenticated(false);
      setUser({});
     }

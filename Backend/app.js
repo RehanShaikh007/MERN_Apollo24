@@ -4,7 +4,6 @@ import dotenv from "dotenv"
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
-import cors from "cors"
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import messageRouter from "./router/messageRouter.js"
@@ -19,14 +18,7 @@ const app = express();
 // config({path: "/.env"})
 dotenv.config();
 
-app.use(
-    cors({
-    origin: [process.env.FRONTEND_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    sameSite: 'none',
-    secure: true
-}));
+
 
 app.use(cookieParser());
 app.use(express.json());
