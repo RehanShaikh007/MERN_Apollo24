@@ -9,7 +9,6 @@ export default defineConfig({
         target: 'https://mern-apollo24-1.onrender.com' || 'http://localhost:4000',
           changeOrigin: true,
           secure: false,
-          rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
       },
     },
   },
