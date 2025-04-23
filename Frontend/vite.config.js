@@ -6,8 +6,8 @@ export default defineConfig({
   server:{
     proxy:{
       '/Backend' : {
-        target: 'https://mern-apollo24-1.onrender.com',
-        secure: true,
+        target: 'http://localhost:4000',
+        secure: false,
       },
     },
   },
